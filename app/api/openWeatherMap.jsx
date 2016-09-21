@@ -9,8 +9,10 @@ module.exports = {
 
     return axios.get(requestUrl).then( res => {
       if (res.data.cod && res.data.message) {
+        console.log('throwing error')
         throw new Error(res.data.message);
       } else {
+        console.log('resolving')
         return res.data.main.temp;
       }
     }, res => {
