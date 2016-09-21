@@ -13,6 +13,9 @@ const Examples = props => {
         <li>
           <Link to="/?location=Rio">Rio, Brazil</Link>
         </li>
+        <li>
+          <Link to="/?location=Mexico">Mexico</Link>
+        </li>
       </ol>
     </div>
   );
