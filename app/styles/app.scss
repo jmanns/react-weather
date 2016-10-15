@@ -1,5 +1,5 @@
 $space-large: 3.5rem;
-$title-color: #757575;
+$title-color: #2199e8;
 
 .page-title {
   margin-top: $space-large;
@@ -9,4 +9,9 @@ $title-color: #757575;
 
 input[type=search] {
   box-shadow: none;
+}
+
+.callout {
+  margin-top: 50px;
+  background-color: #e6e6e6;
 }

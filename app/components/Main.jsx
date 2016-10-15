@@ -9,7 +9,6 @@ const Main = props => {
               <div className="colums medium-6 large-4 small-centered">
                 {props.children}
               </div>
-
             </div>
         </div>
     );

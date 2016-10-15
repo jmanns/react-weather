@@ -5,10 +5,10 @@ const React = require('react');
 // functional component
 const About = props => {
     return (
-      <div>
+      <div className="callout">
         <h1 className="text-center page-title">About</h1>
         <p>
-          This is a simple weather application built on React JS.
+          This is a simple weather application built using React JS.
           Here are some of the tools used:
         </p>
         <ul>
@@ -24,7 +24,12 @@ const About = props => {
             <a href="http://foundation.zurb.com/">Foundation</a> - was
                used for basic styling.
           </li>
-        </ul>
+          </ul>
+          <p>
+            The source code for this project can be viewed on
+            <a href="https://github.com/jmanns/react-weather"> GitHub.</a>
+          </p>
+
       </div>
     );
 }
