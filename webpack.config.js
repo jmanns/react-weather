@@ -27,11 +27,13 @@ module.exports = {
       Weather: 'app/components/Weather.jsx',
       WeatherForm: 'app/components/WeatherForm',
       WeatherMessage: 'app/components/WeatherMessage.jsx',
+      WeatherIcon: 'app/components/WeatherIcon.jsx',
       About: 'app/components/About.jsx',
       Examples: 'app/components/Examples.jsx',
       ErrorModal: 'app/components/ErrorModal.jsx',
       openWeatherMap: 'app/api/openWeatherMap.jsx',
-      applicationStyles: 'app/styles/app.scss'
+      applicationStyles: 'app/css/app.scss',
+      weatherStyles: 'app/css/weather-icons.min.css'
     },
     extensions: ['', '.js', '.jsx']
   },
@@ -44,6 +46,9 @@ module.exports = {
         },
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/
+      }, {
+        loader : 'file-loader',
+        test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/
       }
     ]
   },

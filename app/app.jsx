@@ -10,8 +10,18 @@ const Examples = require('Examples');
 require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 
+// load fonts
+require('file?emitFile=false!./font/weathericons-regular-webfont.eot');
+require('file?emitFile=false!./font/weathericons-regular-webfont.svg');
+require('file?emitFile=false!./font/weathericons-regular-webfont.ttf');
+require('file?emitFile=false!./font/weathericons-regular-webfont.woff');
+require('file?emitFile=false!./font/weathericons-regular-webfont.woff2');
+
+// weather icons css
+require('style!css!weatherStyles');
+
 // App css
-require('style!css!sass!applicationStyles')
+require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
   <Router history={hashHistory}>

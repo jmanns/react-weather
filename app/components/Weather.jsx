@@ -1,6 +1,7 @@
 const React = require('react');
 const WeatherMessage = require('WeatherMessage');
 const WeatherForm = require('WeatherForm');
+const WeatherIcon = require('WeatherIcon');
 const ErrorModal = require('ErrorModal');
 const openWeatherMap = require('openWeatherMap');
 
@@ -15,11 +16,14 @@ const Weather = React.createClass({
           isLoading: true,
           errorMessage: undefined,
           location: undefined,
-          temp: undefined
+          temp: undefined,
+          icon: undefined
         });
 
-        openWeatherMap.getTemp(location).then(temp => {
-            that.setState({location, temp, isLoading: false});
+        openWeatherMap.getWeather(location).then(weather => {
+            let temp = weather.temp;
+            let icon = weather.icon;
+            that.setState({location, temp, icon, isLoading: false});
         }, err => {
             that.setState({
               isLoading: false,
@@ -44,7 +48,7 @@ const Weather = React.createClass({
       }
     },
     render () {
-        let {isLoading, temp, location, errorMessage} = this.state;
+        let {isLoading, temp, icon, location, errorMessage} = this.state;
 
         function renderMessage () {
           if (isLoading)
@@ -66,6 +70,7 @@ const Weather = React.createClass({
                 <WeatherForm onSearch={this.handleSearch}/>
                 {renderMessage()}
                 {renderError()}
+                <WeatherIcon iconClass={icon} />
             </div>
         );
     }
