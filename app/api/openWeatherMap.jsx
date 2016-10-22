@@ -12,7 +12,9 @@ module.exports = {
         throw new Error(res.data.message);
       } else {
         let id = res.data.weather[0].id;
+        let description = res.data.weather[0].description;
         return {
+          description,
           temp: res.data.main.temp,
           icon: `wi wi-owm-${id}`
         }
